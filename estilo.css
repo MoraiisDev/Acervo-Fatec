@@ -1,0 +1,246 @@
+#carousel{
+    max-width:50000px;
+    max-height:500px;
+    width: auto;
+    height: auto;
+}
+#textcar{
+    color:rgb(255, 199, 78)
+}
+#background{
+    background-color:rgb(187, 135, 68)
+}
+h2{
+    margin-left: 1cm;
+}
+#livro-index{
+    margin-left: 2cm;
+    background-color: #cb9d62;
+}
+#cCarousel {
+  position: relative;
+  margin-left: 1cm;
+  margin-right: 1cm;
+}
+#cCarousel .arrow {
+    position: absolute;
+    top: 30%;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 1;
+    font-size: 26px;
+    color: white;
+    background: #00000072;
+    cursor: pointer;
+}
+#cCarousel #prev {
+  left: 0px;
+}
+#cCarousel #next {
+  right: 0px;
+}
+#carousel-vp {
+  height: 180px;
+  display: flex;
+  margin: auto;
+}
+#cCarousel #cCarousel-inner {
+  display: flex;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  gap: 10px;
+  left: 0px;
+}
+#cCarousel1 {
+  position: relative;
+  margin-left: 1cm;
+  margin-right: 1cm;
+}
+#cCarousel1 .arrow1 {
+  position: absolute;
+  top: 30%;
+  display: flex;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+  font-size: 26px;
+  color: white;
+  background: #00000072;
+  cursor: pointer;
+}
+#cCarousel1 #prev1 {
+  left: 0px;
+}
+#cCarousel1 #next1 {
+  right: 0px;
+}
+#carousel-vp1 {
+  height: 180px;
+  display: flex;
+  margin: auto;
+}
+#cCarousel1 #cCarousel-inner1 {
+  display: flex;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  gap: 10px;
+  left: 0px;
+}
+#cCarousel2 {
+  position: relative;
+  margin-left: 1cm;
+  margin-right: 1cm;
+}
+#cCarousel2 .arrow2 {
+  position: absolute;
+  top: 30%;
+  display: flex;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+  font-size: 26px;
+  color: white;
+  background: #00000072;
+  cursor: pointer;
+}
+#cCarousel2 #prev2 {
+  left: 0px;
+}
+#cCarousel2 #next2 {
+  right: 0px;
+}
+#carousel-vp2 {
+  height: 180px;
+  display: flex;
+  margin: auto;
+}
+#cCarousel2 #cCarousel-inner2 {
+  display: flex;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  gap: 10px;
+  left: 0px;
+}
+#nosh{
+  margin-left: -4cm;
+  margin-top: -1.5cm;
+}
+#nosp{
+  margin-left: -4cm;
+}
+#jumbotron{
+  background-color:rgb(240, 197, 145)
+}
+.search-container{
+  width: 300px;
+  display: block;
+  margin-right: 1cm;
+}
+input#search-bar{
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: 1px solid #D0CFCE;
+  outline: none;
+  &:focus{
+    border: 1px solid #000000;
+    transition: 0.35s ease;
+    color: #000000;
+    &::-webkit-input-placeholder{
+      transition: opacity 0.45s ease; 
+  	  opacity: 0;
+    }
+    &::-moz-placeholder {
+      transition: opacity 0.45s ease; 
+  	  opacity: 0;
+    }
+    &:-ms-placeholder {
+      transition: opacity 0.45s ease; 
+  	  opacity: 0;
+    }    
+  }
+}
+#acervo {
+  display: flex;
+  align-items: flex-start;
+}
+.filtro {
+  width: 2000px;
+  padding: 20px;
+  border: 1px solid #000000;
+  margin-left: -350px;
+  margin-top: 20px;
+}
+.conteudo {
+  flex-grow: 1;
+  padding: 20px;
+}
+.pesquisa {
+  margin-bottom: 20px;
+}
+.pesquisa input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000000;
+  background: #cb9d62;
+  border-radius: 5px;
+  margin-left: 100px;
+}
+#cards-acervo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+#livro-acervo{
+  background-color: #cb9d62;
+}
+#login{
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-top: 10px;
+}
+#paginas{
+  margin-left: 900px;
+}
+#sinopse{
+  margin-left: 200px;
+  margin-top: 50px;
+}
+#livro{
+  margin-top: 50px;
+  margin-left: -200px;
+  background-color: #cb9d62;
+}
+#comu{
+  text-align: center;
+}
+#comus{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+#comunidade{
+  display: flex;
+  align-items: flex-start;
+  margin-left: -1px;
+}
+#pescomu{
+  margin-left: 50px;
+  margin-right: 200px;
+}
+#comuni{
+  margin-left: 50px;
+  background-color: #cb9d62;
+}
