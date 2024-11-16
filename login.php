@@ -73,6 +73,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="comunidade.php">Comunidade <span class="sr-only">(página atual)</span></a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="faq.php">Contato <span class="sr-only">(página atual)</span></a>
+                </li>
             </ul>
           <a href="cadastro.php" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Cadastrar</a>
         </div>

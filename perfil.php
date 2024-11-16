@@ -41,6 +41,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="comunidade.php">Comunidade <span class="sr-only">(página atual)</span></a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="faq.php">Contato <span class="sr-only">(página atual)</span></a>
+                </li>
             </ul>
                 <form class="search-container">
                   <input type="text" id="search-bar" placeholder="Busca">
