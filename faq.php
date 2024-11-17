@@ -9,32 +9,26 @@ $logado = $_SESSION['emailUsuario'];
 ?>
 
 <?php
-if (isset($_POST['submit'])) {
-  include_once('config.php');
+$status = null; // Define o status como nulo inicialmente
 
-  $nome = $_POST['nome'];
-  $email = $_POST['email'];
-  $assunto = $_POST['assunto'];
-  $mensagem = $_POST['mensagem'];
+// Lógica para processar o formulário
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    include_once('config.php'); // Conexão com o banco
 
-  $sql = "SELECT * FROM contatos WHERE email = '$email' AND assunto = '$assunto'";
-  $result = $conexao->query($sql);
+    // Captura de dados do formulário
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $assunto = $_POST['assunto'];
+    $mensagem = $_POST['mensagem'];
 
-  if (mysqli_num_rows($result) > 0) {
-    // remove mensagens duplicadas com o mesmo e-mail e assunto
-    $sql_delete = "DELETE FROM contatos WHERE email = '$email' AND assunto = '$assunto'";
-    $conexao->query($sql_delete);
-    header('Location: contato.php');
-  } else {
-    // insere a nova mensagem
-    $sql_insert = "INSERT INTO contatos(nome, email, assunto, mensagem) 
-                       VALUES ('$nome', '$email', '$assunto', '$mensagem')";
-    if ($conexao->query($sql_insert)) {
-      header('Location: contato.php');
+    // Validação e Inserção no Banco de Dados
+    $sql = "INSERT INTO contatos (nome, email, assunto, mensagem) VALUES ('$nome', '$email', '$assunto', '$mensagem')";
+
+    if ($conexao->query($sql) === TRUE) {
+        $status = 'sucesso';
     } else {
-      echo "Erro ao enviar mensagem: " . $conexao->error;
+        $status = 'erro';
     }
-  }
 }
 ?>
 
@@ -76,29 +70,40 @@ if (isset($_POST['submit'])) {
       <a href="sair.php" class="btn btn-secondary btn-lg active" id="sair" role="button" aria-pressed="true">Sair</a>
   </nav>
 
-  <div class="container mt-5">
-    <h1 class="text-center">Contato</h1>
-    <form action="processar_contato.php" method="POST" class="mt-4">
-      <div class="mb-3">
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" name="nome" id="nome" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">E-mail</label>
-        <input type="email" name="email" id="email" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label for="assunto" class="form-label">Assunto</label>
-        <input type="text" name="assunto" id="assunto" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label for="mensagem" class="form-label">Mensagem</label>
-        <textarea name="mensagem" id="mensagem" class="form-control" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
+<div class="container mt-5">
+    <div class="container mt-5">
+        <h1 class="text-center">Contato</h1>
+
+        <?php if ($status === 'sucesso'): ?>
+            <div class="alert alert-success text-center" role="alert">
+                Mensagem enviada com sucesso!
+            </div>
+        <?php elseif ($status === 'erro'): ?>
+            <div class="alert alert-danger text-center" role="alert">
+                Erro ao enviar mensagem. Tente novamente.
+            </div>
+        <?php endif; ?>
+
+    <form action="" method="POST" class="mt-4">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" name="email" id="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="assunto" class="form-label">Assunto</label>
+            <input type="text" name="assunto" id="assunto" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea name="mensagem" id="mensagem" class="form-control" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
-  </div>
-  </div>
+</div>
 
   <script src="app.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
