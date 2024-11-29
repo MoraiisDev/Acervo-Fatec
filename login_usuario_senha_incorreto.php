@@ -57,6 +57,14 @@
         {
             text-align: center;
         }
+        .msgUsu
+        {
+            color: rgb(210,15,15);
+        }
+        .msgPssW
+        {
+            color: rgb(210,15,15);
+        }
     </style>
 </head>
 <body>
@@ -85,12 +93,12 @@
         <h1 class="loginTexto">Login</h1>
         <br>
         <form action="testeLogin.php" method="POST">
-            <input type="text" name="emailUsuario" placeholder="E-mail ou Usuário" required>
+            <input type="text" name="emailUsuario" placeholder="E-mail ou Usuário">
             <br>
+            <b class="msgUsu">E-mail/Usuário incorreto ou não registrado</b>
+            <input type="password" name="senha" placeholder="Senha">
             <br>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <br>
-            <br>
+            <b class="msgPssW">Senha incorreta</b>
             <input class="inputSubmit" type="submit" name="submit" value="Entrar">
             <br>
             <br>

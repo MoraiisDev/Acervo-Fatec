@@ -45,13 +45,43 @@
                     <a class="nav-link" href="faq.php">Contato <span class="sr-only">(página atual)</span></a>
                 </li>
             </ul>
-                <form class="search-container">
-                  <input type="text" id="search-bar" placeholder="Busca">
-                  <a href="#"></a>
+                <form action="acervo.php" method="GET">
+                    <input type="text" name="pesquisa" placeholder="Pesquise por título ou autor" required>
+                    <button type="submit">Pesquisar</button>
                 </form>
             <a href="sair.php" class="btn btn-secondary btn-lg active" id="sair" role="button" aria-pressed="true">Sair</a>
         </div>
     </nav>
+
+    <div id="borda">
+        <form>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Nome de Usuário</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="VitinhoDoGrau">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Data de nascimento</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="31/02/2000">
+                </div>
+              </div>
+            <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@exemplo.com">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Senha</label>
+              <div class="senhaperfil">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
+                <button type="button" class="btn btn-danger trocar-senha">Trocar Senha</button>
+              </div>
+            </div>
+          </form>
+    </div>
 
     <script src="app.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

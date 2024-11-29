@@ -46,9 +46,9 @@
                     <a class="nav-link" href="faq.php">Contato <span class="sr-only">(página atual)</span></a>
                 </li>
             </ul>
-                <form class="search-container">
-                  <input type="text" id="search-bar" placeholder="Busca">
-                  <a href="#"></a>
+                <form action="acervo.php" method="GET">
+                    <input type="text" name="pesquisa" placeholder="Pesquise por título ou autor" required>
+                    <button type="submit">Pesquisar</button>
                 </form>
             <a href="perfil.php" class="btn btn-secondary btn-lg active" id="perfil" role="button" aria-pressed="true">Perfil</a>
             <a href="sair.php" class="btn btn-secondary btn-lg active" id="sair" role="button" aria-pressed="true">Sair</a>

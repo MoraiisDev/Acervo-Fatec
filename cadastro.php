@@ -1,13 +1,13 @@
 <?php
 
-    if(isset($_POST['submit']))
+    if(isset($_POST['submit']) && !empty($_POST['usuario']) && !empty($_POST['email']) && !empty($_POST['senha']))
     {
         include_once('config.php');
 
         $usuario = $_POST['usuario'];
         $email = $_POST['email'];
         $dataNasc = $_POST['dataNasc'];
-        $senha = $_POST['senha'];
+        $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
         
         $sql = "SELECT * FROM usuarios WHERE email = '$email' or usuario = '$usuario'";
 
@@ -15,7 +15,7 @@
 
         if(mysqli_num_rows($result) > 0)
         {
-            $result = mysqli_query($conexao, "DELETE FROM usuarios WHERE email = '$email' and senha = 'senha' or usuario = '$usuario' and senha = '$senha'");
+            $result = mysqli_query($conexao, "DELETE FROM usuarios WHERE email = '$email' and senha = '$senha' or usuario = '$usuario' and senha = '$senha'");
             header('Location: cadastro.php');
         }
         else
